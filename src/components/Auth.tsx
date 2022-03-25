@@ -3,7 +3,7 @@ import { useState } from "react";
 import Cookies from "universal-cookie/es6";
 import axios from "axios";
 
-import signinImage from "../assets/signup.jpg";
+const signinImage = require("../assets/signup.jpg");
 
 const initialState = {
   fullName: "",
@@ -20,11 +20,11 @@ const Auth = () => {
   const [form, setform] = useState(initialState);
   const [isSignup, setIsSignup] = useState(true);
 
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     setform({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
     const { fullName, username, password, phoneNumber, avatarURL } = form;
     const URL = "http://localhost:5000/auth";

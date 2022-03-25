@@ -26,15 +26,16 @@ function stringAvatar(name: string) {
     sx: {
       bgcolor: stringToColor(name),
     },
-    children: `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`,
+    children: `${name.split(" ")[0][0]}`,
   };
 }
 interface IAvatarProps {
   imageUrl?: string;
-  user: any;
+  fullname: any;
 }
-const AvatarWidget = ({ imageUrl, user }: IAvatarProps) => {
-  const fullname = user?.firstname + " " + user?.lastname;
+const AvatarWidget = ({ imageUrl, fullname }: IAvatarProps) => {
+  console.log(fullname.length);
+  
   if (imageUrl) {
     return <Avatar alt={fullname} src={imageUrl} />;
   }
