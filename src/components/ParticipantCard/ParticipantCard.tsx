@@ -4,6 +4,13 @@ import { AvatarWidget } from "../";
 
 const ParticipantCardUiContainer = styled.div`
   color: #fff;
+  background-color: #36373a;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 interface IParticipantCardProps {
   user: any;
@@ -18,7 +25,7 @@ const ParticipantCard = ({ user }: IParticipantCardProps) => {
             fullname={user?.username || user?.firstname || "John Doe"}
           />
         </div>
-        ahahahhahahah
+        {user?.username}
       </div>
     </ParticipantCardUiContainer>
   );

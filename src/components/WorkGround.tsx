@@ -6,11 +6,12 @@ const WorkGroundUiContainer = styled.div`
   background-color: #202124;
 `;
 const WorkGround = () => {
-  const [participants, setParticipants] = useState<any[]>([{username:"john"}]);
+  const initial = new Array(2).fill({username:"John"}) 
+  const [participants, setParticipants] = useState<any[]>(initial);
   return (
     <WorkGroundUiContainer className="h-full w-full">
-      {participants.map((participant) => (
-        <ParticipantCard user={participant} />
+      {participants.map((participant, index) => (
+        <ParticipantCard key={index} user={participant} />
       ))}
     </WorkGroundUiContainer>
   );

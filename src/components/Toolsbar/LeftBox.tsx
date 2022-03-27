@@ -1,24 +1,24 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const LeftBoxUiContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
-color:white;
-.separator{
-  font-weight: bold;
-  color: #ffffff6c;
-}
+  color: white;
+  .separator {
+    font-weight: bold;
+    color: #ffffff6c;
+  }
 `;
 
 const LeftBox = () => {
-  const date = new Date();
-  const [currentDate, setCurrentDate] = useState(date.getHours() + ":" + date.getMinutes())
+  let date = new Date();
+  const [currentDate, setCurrentDate] = useState<string>(date.getHours() + ":" + date.getMinutes());
   setInterval(() => {
-     setCurrentDate(date.getHours() + ":" + date.getMinutes());
-    // console.log(currentDate);
-  }, 60 * 1000);
+     date = new Date();
+    setCurrentDate(date.getHours() + ":" + date.getMinutes());
+  }, 1000);
 
   const meeting_code = "dzt-ghnu-doh";
 
