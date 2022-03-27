@@ -24,7 +24,8 @@ function stringToColor(string: string) {
 function stringAvatar(name: string) {
   return {
     sx: {
-      bgcolor: stringToColor(name),
+      bgcolor: stringToColor(name), 
+       width: 150, height: 150 , fontSize: 50
     },
     children: `${name.split(" ")[0][0]}`,
   };
@@ -37,7 +38,7 @@ const AvatarWidget = ({ imageUrl, fullname }: IAvatarProps) => {
   console.log(fullname.length);
   
   if (imageUrl) {
-    return <Avatar alt={fullname} src={imageUrl} />;
+    return <Avatar  alt={fullname} src={imageUrl} />;
   }
   return <Avatar {...stringAvatar(fullname)} />;
 };

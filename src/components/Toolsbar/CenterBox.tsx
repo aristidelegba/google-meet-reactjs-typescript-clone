@@ -1,5 +1,6 @@
 import React from "react";
-import { MdMicOff, MdMic, MdCallEnd } from "react-icons/md";
+import { MdMicOff, MdMic } from "react-icons/md";
+import { MdCallEnd } from "react-icons/md";
 import { MdVideocamOff, MdVideocam } from "react-icons/md";
 import { MdOutlinePresentToAll } from "react-icons/md";
 import { MdMoreVert } from "react-icons/md";
