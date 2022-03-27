@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import ParticipantCard from "./ParticipantCard/ParticipantCard";
+import ParticipantCard from "../ParticipantCard/ParticipantCard";
 
 const WorkGroundUiContainer = styled.div`
   background-color: #202124;
