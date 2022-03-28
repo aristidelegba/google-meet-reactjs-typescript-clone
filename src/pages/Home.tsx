@@ -4,14 +4,13 @@ import {
   MdOutlineChat,
   MdPeopleAlt,
   MdApps,
-  MdCamera,
   MdKeyboard,
 } from "react-icons/md";
 import { RiVideoAddLine } from "react-icons/ri";
 import Button from "@mui/material/Button";
 import styled from "styled-components";
 import { InputAdornment, TextField } from "@mui/material";
-import FormControl, { useFormControl } from "@mui/material/FormControl";
+import Divider from "@mui/material/Divider";
 
 const HomePageUiContainer = styled.div`
   background-color: #fff;
@@ -47,6 +46,17 @@ const HomePageUiContainer = styled.div`
       line-height: 3.25rem;
       padding-bottom: 0.5em;
     }
+    p {
+      font-family: "Google Sans", Roboto, Arial, sans-serif;
+      font-size: 1.125rem;
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 1.5rem;
+      color: #5f6368;
+      color: var(--gm-color-caption, #5f6368);
+      max-width: 30rem;
+      padding-bottom: 3em;
+    }
   }
 `;
 
@@ -78,9 +88,12 @@ const MeetingCodeForm = () => {
   const onFocusChange = () => {
     setIsFocused((oldVal) => !oldVal);
   };
+  const handleSubmit = () => {
+    console.log(meetingCode);
+  };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit} className="flex items-center gap-2">
       <TextField
         size="small"
         id="input-with-textfield"
@@ -97,10 +110,13 @@ const MeetingCodeForm = () => {
           ),
         }}
       />
-      {(isFocused || meetingCode) && <Button disabled={!meetingCode}>Participer</Button>}
+      {(isFocused || meetingCode) && (
+        <Button disabled={!meetingCode}>Participer</Button>
+      )}
     </form>
   );
 };
+
 const Home = () => {
   return (
     <HomePageUiContainer>
@@ -134,23 +150,24 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="body grid grid-cols-12">
-        <div className="first-block col-span-8">
-          <h1>
+      <div className="body grid grid-cols-2 mt-4">
+        <div className="first-block pl-8 pr-12">
+          <h1 className="mb-2">
             La visioconférence haute qualité, maintenant disponible pour tous
           </h1>
           <p>
             Nous avons adapté Google Meet, notre service de visioconférence
             professionnel sécurisé, afin de le rendre disponible pour tous.
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-6">
             <Button variant="contained" startIcon={<RiVideoAddLine />}>
               Nouvelle Reunion
             </Button>
             <MeetingCodeForm />
+            <Divider />
           </div>
-        </div>{" "}
-        <div className="carousel cols-span-4"></div>
+        </div>
+        <div className="carousel "></div>
       </div>
     </HomePageUiContainer>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { MeetingRoom, Home } from "./Pages";
+import { MeetingRoom, Home } from "./pages";
 import Cookies from "universal-cookie/es6";
 import "./App.css";
 
